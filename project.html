@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Information -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FLAMEZ_DEV - Professional Front-End Developer. Specializing in responsive web design, HTML, CSS, JavaScript, and Bootstrap.">
+  <meta name="keywords" content="Front-End Developer, Web Developer, HTML, CSS, JavaScript, Bootstrap">
+  <meta name="author" content="FLAMEZ_DEV">
+  <meta name="theme-color" content="#00ffff">
+
+  <!-- Page Title -->
+  <title>FLAMEZ_DEV | Front-End Developer Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="80">
+    <!-- Back Button -->
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <!-- Logo/Brand -->
+      <a class="navbar-brand fw-bold text-info" href="#home" aria-label="FLAMEZ_DEV Home">
+        <i class="bi bi-lightning-fill me-2"></i>FLAMEZ_DEV
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="landing.html" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="inbox.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="hero-section text-center text-light d-flex align-items-center justify-content-center flex-column" role="region" aria-label="Hero section">
+    <img src="Images/Daniel .jpg" alt="FLAMEZ_DEV Profile Picture" class="rounded-circle mb-3 profile-pic shadow">
+    <h1 class="fw-bold mb-3">Hi, I'm <span class="text-info">FLAMEZ_DEV</span></h1>
+    <p class="lead mb-4">Front-End Developer | JavaScript Enthusiast</p>
+    <a href="#projects" class="btn btn-info btn-lg" role="button">
+      <i class="bi bi-arrow-right me-2"></i>View My Work
+    </a>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="py-5 text-light" style="background-color: #1a1a2e;" role="region" aria-label="About me section">
+    <div class="container">
+      <!-- Section Title -->
+      <h2 class="fw-bold mb-5 text-center">About Me</h2>
+
+      <!-- Professional Bio -->
+      <p class="w-75 mx-auto mb-5 text-center">
+        I'm a passionate Front-End Developer focused on creating responsive, user-friendly digital experiences. 
+        I specialize in modern web technologies including HTML, CSS, JavaScript, and Bootstrap. 
+        With expertise in Adobe Creative Suite (Illustrator, Photoshop), I combine design and development 
+        to deliver visually stunning and functionally perfect web solutions.
+      </p>
+
+      <!-- Skills Grid -->
+      <div class="row mt-5">
+        <!-- Skill 1: Clean Code -->
+        <div class="col-md-4 mb-4">
+          <div class="card bg-black border-info shadow-sm h-100">
+            <div class="card-body text-center">
+              <i class="bi bi-code-slash fs-1 text-info mb-3 d-block"></i>
+              <h5 class="card-title text-info fw-bold">Clean Code</h5>
+              <p class="card-text" style="color: #bcd7d7;">Writing well-structured, maintainable, and optimized code for maximum scalability.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 2: Responsive Design -->
+        <div class="col-md-4 mb-4">
+          <div class="card bg-black border-info shadow-sm h-100">
+            <div class="card-body text-center">
+              <i class="bi bi-laptop fs-1 text-info mb-3 d-block"></i>
+              <h5 class="card-title text-info fw-bold">Responsive Design</h5>
+              <p class="card-text" style="color: #bcd7d7;">Building layouts that provide perfect user experience across all devices and screen sizes.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 3: Dynamic UI -->
+        <div class="col-md-4 mb-4">
+          <div class="card bg-black border-info shadow-sm h-100">
+            <div class="card-body text-center">
+              <i class="bi bi-lightning-charge fs-1 text-info mb-3 d-block"></i>
+              <h5 class="card-title text-info fw-bold">Dynamic UI</h5>
+              <p class="card-text" style="color: #bcd7d7;">Creating interactive experiences with smooth animations and engaging user interfaces.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="py-5 text-light" style="background-color: #0a0a0a;" role="region" aria-label="Projects section">
+    <div class="container">
+      <!-- Section Title -->
+      <h2 class="fw-bold mb-5 text-center">Featured Projects</h2>
+
+      <!-- Projects Grid -->
+      <div class="row g-4">
+
+        <!-- Project 1: Landing Page -->
+        <div class="col-md-4">
+          <div class="card bg-black border-info h-100 shadow-sm" role="article">
+            <div class="card-body text-center d-flex flex-column">
+              <i class="bi bi-file-earmark-text text-info fs-3 mb-3"></i>
+              <h5 class="card-title text-info fw-bold">Landing Page</h5>
+              <p class="card-text flex-grow-1">
+                A responsive and modern landing page built with HTML5, CSS3, and Bootstrap framework.
+              </p>
+              <a href="https://github.com/Flamez-Dev02/huddles-block.git" target="_blank" rel="noopener noreferrer" class="btn btn-outline-info mt-auto">
+                <i class="bi bi-github me-2"></i>View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: To-Do App / Calculator -->
+        <div class="col-md-4">
+          <div class="card bg-black border-info h-100 shadow-sm" role="article">
+            <div class="card-body text-center d-flex flex-column">
+              <i class="bi bi-calculator-fill text-info fs-3 mb-3"></i>
+              <h5 class="card-title text-info fw-bold">To-Do App / Calculator</h5>
+              <p class="card-text flex-grow-1">
+                A functional productivity app combining task management with calculator features using JavaScript.
+              </p>
+              <a href="https://github.com/Flamez-Dev02/Flamez-Calculator-.git" target="_blank" rel="noopener noreferrer" class="btn btn-outline-info mt-auto">
+                <i class="bi bi-github me-2"></i>View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Weather App -->
+        <div class="col-md-4">
+          <div class="card bg-black border-info h-100 shadow-sm" role="article">
+            <div class="card-body text-center d-flex flex-column">
+              <i class="bi bi-cloud-sun text-info fs-3 mb-3"></i>
+              <h5 class="card-title text-info fw-bold">Weather App</h5>
+              <p class="card-text flex-grow-1">
+                Real-time weather forecast application utilizing JavaScript APIs for live data retrieval.
+              </p>
+              <a href="https://github.com/yourusername/weather-app" target="_blank" rel="noopener noreferrer" class="btn btn-outline-info mt-auto">
+                <i class="bi bi-github me-2"></i>View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="py-5 text-light text-center" style="background-color: #1a1a2e;" role="region" aria-label="Contact section">
+    <div class="container">
+      <!-- Section Title -->
+      <h2 class="fw-bold mb-4">Let's Work Together</h2>
+      
+      <p class="mb-4 text-muted">Have a project in mind? I'd love to hear from you!</p>
+
+      <!-- Contact Button -->
+      <a href="inbox-redesigned.html" class="btn btn-info btn-lg" role="button">
+        <i class="bi bi-envelope-fill me-2"></i>Send Me a Message
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="text-center py-4 border-top" style="background-color: #0a0a0a; color: #707070;" role="contentinfo">
+    <div class="container">
+      <p class="mb-0">&copy; 2026 FLAMEZ_DEV. All rights reserved.</p>
+      <p class="small mt-2"><span class="text-info">💻</span> Full Stack Dev</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <!-- Bootstrap JavaScript Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>

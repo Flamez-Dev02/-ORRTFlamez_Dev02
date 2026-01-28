@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - FLAMEZ_DEV</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #0a2a2a 100%);
+      color: #fff;
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Animated Background */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.03) 0%, transparent 50%);
+      animation: gradientShift 15s ease infinite;
+      z-index: -1;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(20px, -20px); }
+    }
+
+    /* Back Button */
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 100;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: rgba(0, 255, 255, 0.1);
+      border: 2px solid #00ffff;
+      color: #00ffff;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .back-btn:hover {
+      background: #00ffff;
+      color: #000;
+      transform: translateX(-5px);
+    }
+
+    /* Main Container */
+    .inbox-wrapper {
+      max-width: 1100px;
+      margin: 80px auto 0;
+      animation: slideUp 0.8s ease;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Header Section */
+    .contact-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .contact-header h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 900;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #00ffff 0%, #00ccff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .contact-header p {
+      font-size: 1.2rem;
+      color: #bcd7d7;
+      font-weight: 500;
+    }
+
+    /* Content Grid */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* Contact Info Section */
+    .contact-info-section {
+      background: rgba(0, 255, 255, 0.05);
+      border: 2px solid rgba(0, 255, 255, 0.2);
+      padding: 40px 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .contact-info-section:hover {
+      background: rgba(0, 255, 255, 0.1);
+      border-color: #00ffff;
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+    }
+
+    .contact-info-section h2 {
+      font-size: 2rem;
+      color: #00ffff;
+      margin-bottom: 30px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-item {
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .info-item:hover {
+      transform: translateX(5px);
+    }
+
+    .info-label {
+      font-size: 0.9rem;
+      color: #a0a0a0;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .info-content {
+      font-size: 1.1rem;
+      color: #bcd7d7;
+      font-weight: 500;
+    }
+
+    .info-content a {
+      color: #00ffff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .info-content a:hover {
+      color: #bcd7d7;
+      text-decoration: underline;
+    }
+
+    /* Contact Form Section */
+    .contact-form-section {
+      background: rgba(0, 255, 255, 0.05);
+      border: 2px solid rgba(0, 255, 255, 0.2);
+      padding: 40px 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    .contact-form-section h2 {
+      font-size: 2rem;
+      color: #00ffff;
+      margin-bottom: 30px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      color: #bcd7d7;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 14px 16px;
+      background-color: rgba(30, 30, 50, 0.6);
+      border: 2px solid rgba(0, 255, 255, 0.2);
+      border-radius: 8px;
+      color: #e0e0e0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      resize: vertical;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #707070;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      background-color: rgba(30, 30, 50, 0.9);
+      border-color: #00ffff;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+      color: #ffffff;
+    }
+
+    .error-message {
+      color: #ff6b6b;
+      font-size: 0.85rem;
+      margin-top: 5px;
+      font-weight: 500;
+      display: none;
+    }
+
+    .form-group.error input,
+    .form-group.error textarea {
+      border-color: #ff6b6b;
+      background-color: rgba(255, 107, 107, 0.1);
+    }
+
+    .form-group.error .error-message {
+      display: block;
+    }
+
+    .success-message {
+      background: rgba(76, 175, 80, 0.2);
+      border-left: 4px solid #4caf50;
+      color: #4caf50;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: none;
+      font-weight: 600;
+      animation: slideDown 0.3s ease;
+    }
+
+    .success-message.show {
+      display: block;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px 0;
+      background: linear-gradient(135deg, #00ffff 0%, #00ccff 100%);
+      border: none;
+      color: #000;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+      letter-spacing: 1px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    }
+
+    .submit-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .back-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+
+      .inbox-wrapper {
+        margin-top: 70px;
+      }
+
+      .contact-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .contact-header p {
+        font-size: 1rem;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .contact-info-section,
+      .contact-form-section {
+        padding: 30px 20px;
+      }
+
+      .contact-info-section h2,
+      .contact-form-section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <div class="animated-bg"></div>
+
+  <!-- Back Button -->
+  <a href="index.html" class="back-btn">
+    <i class="bi bi-arrow-left"></i> Back
+  </a>
+
+  <!-- Main Container -->
+  <div class="inbox-wrapper">
+    <!-- Header -->
+    <div class="contact-header">
+      <h1>Let's Connect</h1>
+      <p>Have a project in mind? Let's work together and create something amazing!</p>
+    </div>
+
+    <!-- Contact Container -->
+    <div class="contact-container">
+      
+      <!-- Contact Information Section -->
+      <section class="contact-info-section" role="region" aria-labelledby="contact-info-title">
+        <h2 id="contact-info-title">
+          <i class="bi bi-telephone-fill"></i> Get in Touch
+        </h2>
+
+        <div class="info-item">
+          <div class="info-label">
+            <i class="bi bi-telephone"></i> Phone
+          </div>
+          <div class="info-content">
+            <a href="tel:+2348060766384">+234 8060 766 3384</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-label">
+            <i class="bi bi-envelope"></i> Email
+          </div>
+          <div class="info-content">
+            <a href="mailto:dannydeveloper0@gmail.com">dannydeveloper0@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-label">
+            <i class="bi bi-geo-alt"></i> Location
+          </div>
+          <div class="info-content">
+            Lead City University, Ibadan, Oyo State
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-label">
+            <i class="bi bi-instagram"></i> Instagram
+          </div>
+          <div class="info-content">
+            <a href="https://instagram.com/daniel_flamez02" target="_blank">@daniel_flamez02</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-label">
+            <i class="bi bi-whatsapp"></i> WhatsApp
+          </div>
+          <div class="info-content">
+            <a href="https://wa.me/2348060766384" target="_blank">+234 806 076 3384</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form Section -->
+      <section class="contact-form-section" role="region" aria-labelledby="contact-form-title">
+        <h2 id="contact-form-title">
+          <i class="bi bi-chat-dots"></i> Send a Message
+        </h2>
+
+        <div class="success-message" id="successMessage">
+          <i class="bi bi-check-circle"></i> Message sent successfully!
+        </div>
+
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              placeholder="John Doe" 
+              required 
+              aria-required="true"
+            />
+            <span class="error-message">Please enter your name</span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="your@email.com" 
+              required 
+              aria-required="true"
+            />
+            <span class="error-message">Please enter a valid email</span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="5" 
+              placeholder="Tell me about your project..." 
+              required 
+              aria-required="true"
+            ></textarea>
+            <span class="error-message">Please enter your message</span>
+          </div>
+
+          <button type="submit" class="submit-btn" aria-label="Send Message">
+            <i class="bi bi-send"></i> Send Message
+          </button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get form fields
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+
+      // Get form groups for error styling
+      const nameGroup = nameInput.closest('.form-group');
+      const emailGroup = emailInput.closest('.form-group');
+      const messageGroup = messageInput.closest('.form-group');
+
+      // Reset error states
+      [nameGroup, emailGroup, messageGroup].forEach(group => group.classList.remove('error'));
+
+      // Validation
+      let isValid = true;
+
+      if (nameInput.value.trim() === '') {
+        nameGroup.classList.add('error');
+        isValid = false;
+      }
+
+      if (emailInput.value.trim() === '') {
+        emailGroup.classList.add('error');
+        isValid = false;
+      } else {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput.value.trim())) {
+          emailGroup.classList.add('error');
+          isValid = false;
+        }
+      }
+
+      if (messageInput.value.trim() === '') {
+        messageGroup.classList.add('error');
+        isValid = false;
+      }
+
+      // Submit if valid
+      if (isValid) {
+        console.log({
+          name: nameInput.value,
+          email: emailInput.value,
+          message: messageInput.value
+        });
+
+        // Show success message
+        successMessage.classList.add('show');
+
+        // Reset form
+        form.reset();
+
+        // Hide success message after 3 seconds
+        setTimeout(() => {
+          successMessage.classList.remove('show');
+        }, 3000);
+      }
+    });
+
+    // Clear error on input
+    ['name', 'email', 'message'].forEach(fieldId => {
+      document.getElementById(fieldId).addEventListener('input', function() {
+        this.closest('.form-group').classList.remove('error');
+      });
+    });
+  </script>
+</body>
+</html>

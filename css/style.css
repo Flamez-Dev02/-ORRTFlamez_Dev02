@@ -1,0 +1,219 @@
+/* I basically used (cyan) */
+
+/* ===== ROOT & GLOBAL STYLES ===== */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #0a0a0a;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  /* ===== HERO SECTION ===== */
+  .hero-section {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    height: 100vh;
+    margin-top: 80px;
+  }
+  
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border: 4px solid #00ffff;
+    animation: fadeIn 0.8s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* ===== CARDS ===== */
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #1a1a2e !important;
+    border-color: #00ffff !important;
+  }
+  
+  .card-text {
+    color: #bcd7d7;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .card-title {
+    color: #00ffff;
+    font-weight: 700;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+  }
+  
+  /* ===== BUTTONS ===== */
+  .btn-info {
+    background-color: #00ffff;
+    border-color: #00ffff;
+    color: #000;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-info:hover {
+    background-color: #00ccff;
+    border-color: #00ccff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+  }
+  
+  .btn-outline-info {
+    border-color: #00ffff;
+    color: #00ffff;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline-info:hover {
+    background-color: #00ffff;
+    border-color: #00ffff;
+    color: #000;
+    transform: translateY(-2px);
+  }
+  
+  /* ===== NAVBAR ===== */
+  .navbar {
+    background-color: #0a0a0a !important;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #bcd7d7 !important;
+    transition: color 0.3s ease;
+    margin: 0 10px;
+    font-weight: 500;
+  }
+  
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
+    color: #00ffff !important;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  
+  /* ===== SECTIONS ===== */
+  section {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  
+  section.show {
+    opacity: 1;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ===== TEXT & TYPOGRAPHY ===== */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  h2 {
+    color: #00ffff;
+    border-bottom: 2px solid rgba(0, 255, 255, 0.2);
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+  }
+  
+  .text-info {
+    color: #00ffff !important;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+  
+  /* ===== BACKGROUND COLORS ===== */
+  .bg-dark {
+    background-color: #0a0a0a !important;
+  }
+  
+  .bg-black {
+    background-color: #1a1a2e !important;
+  }
+  
+  /* ===== SPACING & LAYOUT ===== */
+  .py-5 {
+    padding: 60px 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+  }
+  
+  /* ===== FOOTER ===== */
+  footer {
+    background-color: #0a0a0a !important;
+    border-top: 1px solid rgba(0, 255, 255, 0.1);
+    color: #707070;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  /* ===== RESPONSIVE DESIGN ===== */
+  @media (max-width: 768px) {
+    .hero-section {
+      margin-top: 60px;
+    }
+  
+    .profile-pic {
+      width: 110px;
+      height: 110px;
+    }
+  
+    .navbar-nav .nav-link {
+      margin: 5px 0;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .py-5 {
+      padding: 40px 0;
+    }
+  
+    .card {
+      margin-bottom: 20px;
+    }
+  }
+  /* Mostly for project */
